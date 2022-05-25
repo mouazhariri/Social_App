@@ -4,6 +4,7 @@ import 'package:flutter_appp/Layout/shop_app/cubit/cubit.dart';
 import 'package:flutter_appp/Layout/shop_app/shop_Layout.dart';
 
 import 'package:flutter_appp/Layout/todo_app/cubit/cubit.dart';
+import 'package:flutter_appp/shared/styles/Icon_Dam.dart';
 import 'package:flutter_appp/shared/styles/colors.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../../modules/news_app/Web_view/Web_veiw_Screen.dart';
@@ -39,6 +40,7 @@ Widget defaultbutton({
 Widget defaultTextButton({
   required Function function,
   required String text,
+  Color color = Colors.green,
 }) =>
     TextButton(
       onPressed: () {
@@ -46,6 +48,7 @@ Widget defaultTextButton({
       },
       child: Text(
         text.toUpperCase(),
+        style: TextStyle(color: color),
       ),
     );
 //////////////////////////////
@@ -75,7 +78,7 @@ Widget defaulttextformfield({
       onChanged: onChanged,
       obscureText: ispasswoard,
       onTap: () {
-        onTap!();
+        onTap;
       },
       enabled: isClickable,
       validator: (s) {
@@ -299,14 +302,15 @@ void navigateToAndFinish(
 
 void showToast({
   required String message,
-  required toastState state,
+  toastState? state,
+  Color? textColor,
 }) =>
     Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 5,
-        backgroundColor: choseToastColor(state),
+        backgroundColor: choseToastColor(state!),
         textColor: Colors.white,
         fontSize: 16.0);
 //enum
@@ -427,4 +431,22 @@ Widget buildListProduct(
           ],
         ),
       ),
+    );
+//////////////////////////
+
+buildAppbar({
+  required BuildContext context,
+  String? title,
+  List<Widget>? actions,
+  Widget? leading,
+}) =>
+    AppBar(
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Icon(IconDam.Arrow___Left_2),
+      ),
+      title: Text(title ?? ''),
+      actions: actions,
     );

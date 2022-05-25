@@ -16,8 +16,6 @@ class socialRegisterPasswordStats extends socialRegisterStates {}
 
 class SocialUserCreateSuccessStats extends socialRegisterStates {}
 
-class SocialUserCreateLoadingStats extends socialRegisterStates {}
-
 class SocialUserCreateErrorStats extends socialRegisterStates {
   final String error;
 

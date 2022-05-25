@@ -23,6 +23,9 @@ class socialRegisterScreen extends StatelessWidget {
       create: (BuildContext context) => socialRegisterCubit(),
       child: BlocConsumer<socialRegisterCubit, socialRegisterStates>(
         listener: (context, state) {
+          if (state is socialRegisterErrorStats) {
+            showToast(message: state.error, state: toastState.Error);
+          }
           if (state is SocialUserCreateSuccessStats) {
             navigateToAndFinish(context, SocialScreen());
           }
@@ -59,8 +62,8 @@ class socialRegisterScreen extends StatelessWidget {
                         defaulttextformfield(
                           controller: nameController,
                           type: TextInputType.name,
-                          validator: (String value) {
-                            if (value.isEmpty) {
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
                               return 'please enter your name';
                             }
                             return null;
@@ -74,8 +77,8 @@ class socialRegisterScreen extends StatelessWidget {
                         defaulttextformfield(
                           controller: emailController,
                           type: TextInputType.emailAddress,
-                          validator: (String value) {
-                            if (value.isEmpty) {
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
                               return 'please enter your email address';
                             }
                             return null;
@@ -98,8 +101,8 @@ class socialRegisterScreen extends StatelessWidget {
                                 .get(context)
                                 .changePasswordVisibility();
                           },
-                          validator: (String value) {
-                            if (value.isEmpty) {
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
                               return 'password is too short';
                             }
                             return null;
@@ -113,8 +116,8 @@ class socialRegisterScreen extends StatelessWidget {
                         defaulttextformfield(
                           controller: phoneController,
                           type: TextInputType.phone,
-                          validator: (String value) {
-                            if (value.isEmpty) {
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
                               return 'please enter your phone number';
                             }
                             return null;

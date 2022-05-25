@@ -24,7 +24,7 @@ class SocialLogin extends StatelessWidget {
           }
           if (state is socialLoginSuccessStats) {
             CacheHelper.saveData(key: 'uId', value: state.uId).then((value) {
-              // uId = state.uId;
+              uId = state.uId;
               navigateToAndFinish(context, SocialScreen());
             }).catchError((error) {
               print(error.toString());
@@ -71,8 +71,8 @@ class SocialLogin extends StatelessWidget {
                         defaulttextformfield(
                             controller: emailController,
                             type: TextInputType.emailAddress,
-                            validator: (value) {
-                              if (value.isEmpty) {
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
                                 return 'email must be not empty';
                               }
                               return null;
@@ -93,8 +93,8 @@ class SocialLogin extends StatelessWidget {
                                   .changeVisibilityPassword();
                             },
                             type: TextInputType.visiblePassword,
-                            validator: (String value) {
-                              if (value.isEmpty) {
+                            validator: (String? value) {
+                              if (value!.isEmpty) {
                                 return 'password must be not empty';
                               }
                               return null;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appp/models/users/users.dart';
+import 'package:flutter_appp/modules/social_app/Chatts/Chatt_Screen.dart';
+import 'package:flutter_appp/shared/components/components.dart';
 
 // ignore: must_be_immutable
 class UsersScreen extends StatelessWidget {
@@ -37,7 +39,7 @@ class UsersScreen extends StatelessWidget {
       ),
       body: ListView.separated(
           itemBuilder: (context, index) =>
-              builduseritem(users[index]), //بقعد بستخرج item,item
+              builduseritem(users[index], context), //بقعد بستخرج item,item
           separatorBuilder: (context, index) => Container(
                 width: double.infinity,
                 color: Colors.grey,
@@ -48,7 +50,7 @@ class UsersScreen extends StatelessWidget {
   }
 
 //بستقبل ال item in widget
-  Widget builduseritem(UserModel user) => Padding(
+  Widget builduseritem(UserModel user, context) => Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(
           children: [

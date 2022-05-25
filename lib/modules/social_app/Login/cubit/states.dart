@@ -4,8 +4,9 @@ class socialLoginInitialStats extends socialLoginStates {}
 
 class socialLoginSuccessStats extends socialLoginStates {
   final String uId;
-
-  socialLoginSuccessStats(this.uId);
+  socialLoginSuccessStats({
+    required this.uId,
+  });
 }
 
 class socialLoginLoadingStats extends socialLoginStates {}
