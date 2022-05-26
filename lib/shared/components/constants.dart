@@ -22,9 +22,7 @@ import 'package:flutter_appp/shared/components/components.dart';
 
 void logOut(context) {
   CacheHelper.removeData(key: 'token').then((value) {
-    if (value) {
-
-    }
+    if (value) {}
   });
 }
 

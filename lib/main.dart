@@ -102,14 +102,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-
         BlocProvider(
           create: (BuildContext context) => ModeChangeCubit()
             ..appChangeMode(
               fromShared: isDark,
             ),
         ),
-
         BlocProvider(
             create: (context) => SocialCubit()
               ..getUserData()

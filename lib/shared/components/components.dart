@@ -5,7 +5,6 @@ import 'package:flutter_appp/shared/styles/Icon_Dam.dart';
 import 'package:flutter_appp/shared/styles/colors.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-
 Widget defaultbutton({
   double width = double.infinity,
   Color background = Colors.blue,
@@ -96,10 +95,6 @@ Widget defaulttextformfield({
       ),
     );
 
-
-
-
-
 //space item
 Widget myDivider() => Padding(
       padding: const EdgeInsetsDirectional.only(start: 20.0),
@@ -109,10 +104,6 @@ Widget myDivider() => Padding(
         color: Colors.grey[200],
       ),
     );
-
-
-
-
 
 //push to next page
 void navigateTo(context, widget) =>
