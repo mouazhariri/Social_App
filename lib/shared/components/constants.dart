@@ -15,8 +15,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_appp/Layout/social_app/Cubit/state.dart';
 import 'package:flutter_appp/models/social_model/social_model.dart';
-import 'package:flutter_appp/modules/shop_app/on_boarding/login/shop_login_screen.dart';
-import 'package:flutter_appp/modules/shop_app/on_boarding/login/shop_login_screen.dart';
+
 import 'package:flutter_appp/modules/social_app/Login/social_Login.dart';
 import 'package:flutter_appp/shared/Network/Local/cache_helper.dart';
 import 'package:flutter_appp/shared/components/components.dart';
@@ -24,7 +23,7 @@ import 'package:flutter_appp/shared/components/components.dart';
 void logOut(context) {
   CacheHelper.removeData(key: 'token').then((value) {
     if (value) {
-      navigateToAndFinish(context, ShopLoginScreen());
+
     }
   });
 }

@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_appp/Layout/news_app/Cubit/State.dart';
+import 'package:flutter_appp/Layout/cub/State.dart';
+
 import 'package:flutter_appp/shared/Network/Local/cache_helper.dart';
 import 'package:flutter_appp/shared/Network/remote/dio_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

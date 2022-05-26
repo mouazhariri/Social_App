@@ -5,8 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_appp/Layout/news_app/Cubit/State.dart';
-import 'package:flutter_appp/Layout/shop_app/cubit/cubit.dart';
+import 'package:flutter_appp/Layout/cub/State.dart';
+import 'package:flutter_appp/Layout/cub/dark_light(toggle).dart';
+
 import 'package:flutter_appp/Layout/social_app/Cubit/cubit.dart';
 import 'package:flutter_appp/Layout/social_app/social_screen.dart';
 import 'package:flutter_appp/modules/Splash_Screens/Social_Splach.dart';
@@ -17,8 +18,7 @@ import 'package:flutter_appp/shared/Network/remote/dio_helper.dart';
 import 'package:flutter_appp/shared/components/components.dart';
 import 'package:flutter_appp/shared/styles/themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'Layout/news_app/Cubit/cubit.dart';
-import 'Layout/news_app/Cubit/dark_light(toggle).dart';
+
 import 'package:flutter_appp/shared/bloc_observer.dart';
 import 'shared/components/constants.dart';
 
@@ -102,24 +102,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => NewsCubit()
-            ..getBusiness()
-            ..getSports()
-            ..getScience(),
-        ),
+
         BlocProvider(
           create: (BuildContext context) => ModeChangeCubit()
             ..appChangeMode(
               fromShared: isDark,
             ),
         ),
-        BlocProvider(
-            create: (context) => ShopCubit()
-              ..getHomeData()
-              ..getCategories()
-              ..getFavorites()
-              ..getUser()),
+
         BlocProvider(
             create: (context) => SocialCubit()
               ..getUserData()
