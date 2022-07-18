@@ -131,6 +131,7 @@ class socialRegisterScreen extends StatelessWidget {
                         ConditionalBuilder(
                           condition: state is! socialRegisterLoadingStats,
                           builder: (context) => defaultbutton(
+                             background: Colors.green,
                             function: () {
                               if (formKey.currentState!.validate()) {
                                 socialRegisterCubit.get(context).userRegister(
