@@ -64,7 +64,7 @@ class drawer extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.red),
                       ),
                       onTap: () {
-                        // logOuts(context);
+                         logOuts(context);
                       },
                     ),
                   ],
