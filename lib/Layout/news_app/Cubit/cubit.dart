@@ -43,7 +43,7 @@ class NewsCubit extends Cubit<NewsState> {
     DioHelper.getData(
       url: 'v2/top-headlines',
       query: {
-        'country': 'eg',
+        'country': 'ae',
         'category': 'business',
         'apiKey': '0ae97745667048e69851b7ff496bf7d5'
       },
@@ -66,7 +66,7 @@ class NewsCubit extends Cubit<NewsState> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'ae',
           'category': 'sports',
           'apiKey': '0ae97745667048e69851b7ff496bf7d5'
         },
@@ -92,7 +92,7 @@ class NewsCubit extends Cubit<NewsState> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'ae',
           'category': 'science',
           'apiKey': '0ae97745667048e69851b7ff496bf7d5'
         },
@@ -133,4 +133,7 @@ class NewsCubit extends Cubit<NewsState> {
     isDark = !isDark;
     emit(NewsGetModeState());
   }
+
+  bool isBottomSheetShown = false;
+  IconData fabIcon = Icons.add;
 }

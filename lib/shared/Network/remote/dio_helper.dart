@@ -5,24 +5,24 @@ class DioHelper {
   static late Dio dio;
 
   //news
-  // static init() {
-  //   dio = Dio(
-  //     BaseOptions(
-  //       baseUrl: 'https://newsapi.org/',
-  //       receiveDataWhenStatusError: true,
-  //     ),
-  //   );
-  // }
-
-  //shop app
   static init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://student.valuxapps.com/api/',
+        baseUrl: 'https://newsapi.org/',
         receiveDataWhenStatusError: true,
       ),
     );
   }
+
+  //shop app
+  // static init() {
+  //   dio = Dio(
+  //     BaseOptions(
+  //       baseUrl: 'https://student.valuxapps.com/api/',
+  //       receiveDataWhenStatusError: true,
+  //     ),
+  //   );
+  // }
 
 //just get data
   static Future<Response> getData({

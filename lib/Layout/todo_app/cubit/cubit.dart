@@ -3,11 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appp/Layout/news_app/Cubit/State.dart';
 import 'package:flutter_appp/Layout/todo_app/cubit/state.dart';
-// import 'package:flutter_appp/Layout/cubit/state.dart';
-
-import '../../../modules/todo_app/Achived_tasks/Archived_tasks_screen.dart';
-import '../../../modules/todo_app/Done_tasks/Done_tasks_screen.dart';
-import '../../../modules/todo_app/New_tasks/New_tasks_screen.dart';
 import 'package:flutter_appp/shared/components/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
@@ -20,11 +15,7 @@ class AppCubit extends Cubit<AppState> {
 
   int currentIndex = 0;
 
-  List<Widget> screens = [
-    NewTasksScreen(),
-    DoneTasksScreen(),
-    ArchivedTasksScreen(),
-  ];
+  List<Widget> screens = [];
 
   List<String> titles = [
     'New Tasks',
